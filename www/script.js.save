@@ -1,0 +1,30 @@
+const STORAGE_KEY = 'name';
+let user_name = getNameFromStorage();
+
+if (user_name) {
+	let title_node = document.getElementById("title");
+	title_node.textContent = `WELCOME TO MY SERVER! Dear, ${user_name}`; 
+}
+else
+{
+	user_name = prompt("Enter yor name");
+	localStorage.setItem("name", user_name);
+title_node.textContent = `WELCOME TO MY SERVER! Dear, $}`;
+}
+
+function setNameToStorage(name) {
+	localStorage.setItem(STORAGE_KEY, name);
+}
+
+function getNameFromStorage() {
+	return localStorage.getItem(STORAGE_KEY);
+}
+
+
+// var today = new Date();
+// var dd = String(today.getDate()).padStart(2, '0');
+// var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+// var yyyy = today.getFullYear();
+
+// today = 'Today: ' + dd + '-' + mm + '-' + yyyy;
+// document.getElementById("today").textContent = today;
